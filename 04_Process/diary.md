@@ -53,3 +53,7 @@ Yeah, this was an ambitious suggestion. But I'm on holiday, dang it.
 ## Note for Future You - Friday 23 August 2024, 9:48pm
 
 If the Firefighter ever makes it into the game, the basic projectile from the tutorial isn't far removed from what you want. Just a thought.
+
+## Note for Future You - Saturday 24 August 2024, 12:01am
+
+Music is hard. You'll want to elaborate on this.
