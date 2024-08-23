@@ -22,7 +22,7 @@ Seeing the black/grey version though made me realise one of the points of this e
 
 The old sheet also reminded me of the momentary madness of removing a single layer of pixels to try and give an effect of the cat pawing away at a surface to get comfortable (is there an actual term for this?). In my head it looked cute. In reality it was a little distracting.
 
-So the black and grey cat stays in the picture. It probably won't get used in the version for September, unless I really make headway on player skins. We'll *save it for the Deluxe Edition*.
+So the black and grey cat stays in the picture. It probably won't get used in the version for September, unless I really make headway on player skins. We'll * **save it for the Deluxe Edition** *.
 
 ## Feedback on Feedback - Monday 19 August 2024, 4:19pm
 
@@ -36,7 +36,7 @@ I have been slowly making adjustments to the map to try and counter this - such 
 
 This was a particularly pointed comment, as the level design of *Mario Bros.* was very much in mind when I designed this test stage. When they then elaborated that I probably wanted something more akin to *Towerfall* (itself another key reference for *Jumpfighters*), I could see the point more clearly. As *Mario Bros.* is more PvE than PvP, it stands to reason that its level degined would support this type of gameplay. *Mario Bros.* is also a much a slower, *floatier* game than something like *Towerfall* (let alone what I'm going for in *Jumpfighters*), so it checks out that some of that influence has rubbed off on my game.
 
-The suggestion to fix this was just to make the whole world *smaller*, like a quarter of the size of what I currently have on offer. [My partner had an entirely different different thought on this, which at the time of writing has entirely escaped me.] This notion has been bouncing around my head for the last few days, and I can perceive a number of different ways of trying this out. 
+The suggestion to fix this was just to make the whole world *smaller*, like a quarter of the size of what I currently have on offer. *[NOTE: My partner had an entirely different different thought on this, which at the time of writing has entirely escaped me.]* This notion has been bouncing around my head for the last few days, and I can perceive a number of different ways of trying this out. 
 
 The one that seems to holding court in the front of my brain is to have players race through a series of tightly designed rooms, and that the player who *wins* the most rooms is the one who prevails overall. Comabt could still play a role here, but mostly as a means for the Fighters to slow each other down, rather than be a means to score points unto themselves. Another is to keep the single room (even scrolling, potentially) concept that I had at the beginning of the project, but have the level(s) be much much less symmetrical. There's potentially lots to play with here.
 
@@ -52,8 +52,4 @@ Yeah, this was an ambitious suggestion. But I'm on holiday, dang it.
 
 ## Note for Future You - Friday 23 August 2024, 9:48pm
 
-<<<<<<< Updated upstream
 If the Firefighter ever makes it into the game, the basic projectile from the tutorial isn't far removed from what you want. Just a thought.
-=======
-If the Firefighter ever makes it into the game, the basic projectile from the tutorial isn't far removed from what you want.
->>>>>>> Stashed changes
