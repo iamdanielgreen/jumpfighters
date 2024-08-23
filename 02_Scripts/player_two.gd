@@ -24,9 +24,9 @@ func _physics_process(delta):
 	var direction = Input.get_axis("p2_left", "p2_right")
 	
 	#Flips the sprite
-	if direction < 0:
+	if direction > 0:
 		animated_sprite.flip_h = false
-	elif direction > 0:
+	elif direction < 0:
 		animated_sprite.flip_h = true
 	
 	#Play animations
