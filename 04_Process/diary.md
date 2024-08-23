@@ -22,9 +22,9 @@ Seeing the black/grey version though made me realise one of the points of this e
 
 The old sheet also reminded me of the momentary madness of removing a single layer of pixels to try and give an effect of the cat pawing away at a surface to get comfortable (is there an actual term for this?). In my head it looked cute. In reality it was a little distracting.
 
-So the black and grey cat stays in the picture. It probably won't get used in the version for September, unless I really make headway on player skins. We'll save it for the Deluxe Edition.
+So the black and grey cat stays in the picture. It probably won't get used in the version for September, unless I really make headway on player skins. We'll *save it for the Deluxe Edition*.
 
-##Feedback on Feedback - Monday 19 August 2024, 4:19pm
+## Feedback on Feedback - Monday 19 August 2024, 4:19pm
 
 I presented the current state of *Jumpfighters* during a Work in Progress session last Friday. People seemed into the idea as whole - the arcade-style premise of the game, its pixel art asthetic, and its focus on local multiplayer - but I receive a note on the current level design; namely, that it's too large and has too much space. 
 
@@ -44,7 +44,7 @@ One thing that was mentioned at the end of my slot, the kind of thing that's rea
 
 OK, I was going to allow myself three songs of *The English Riviera* to punch out these notes. The whole album is now finished - let's try and get some actual work done later this evening.
 
-##Update on Feedback on Feedback - Wednesday 21 August 2024, 5:20pm
+## Update on Feedback on Feedback - Wednesday 21 August 2024, 5:20pm
 
 *"...let's try and get some actual work done later this evening."*
 
