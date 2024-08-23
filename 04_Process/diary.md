@@ -52,4 +52,8 @@ Yeah, this was an ambitious suggestion. But I'm on holiday, dang it.
 
 ## Note for Future You - Friday 23 August 2024, 9:48pm
 
+<<<<<<< Updated upstream
 If the Firefighter ever makes it into the game, the basic projectile from the tutorial isn't far removed from what you want. Just a thought.
+=======
+If the Firefighter ever makes it into the game, the basic projectile from the tutorial isn't far removed from what you want.
+>>>>>>> Stashed changes
