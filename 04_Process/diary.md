@@ -49,3 +49,7 @@ OK, I was going to allow myself three songs of *The English Riviera* to punch ou
 *"...let's try and get some actual work done later this evening."*
 
 Yeah, this was an ambitious suggestion. But I'm on holiday, dang it.
+
+## Note for Future You - Friday 23 August 2024, 9:48pm
+
+If the Firefighter ever makes it into the game, the basic projectile from the tutorial isn't far removed from what you want. Just a thought.
