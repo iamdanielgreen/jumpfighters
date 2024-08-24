@@ -57,3 +57,7 @@ If the Firefighter ever makes it into the game, the basic projectile from the tu
 ## Note for Future You - Saturday 24 August 2024, 12:01am
 
 Music is hard. You'll want to elaborate on this.
+
+## A further elaboration. - Saturday 24 August 2024, 11:32am
+
+[Here's seven different versions of the Mute City theme to listen to while you think about this and I work on the actual game instead of writing notes here.](https://www.youtube.com/watch?v=2yWPeY5s708)
