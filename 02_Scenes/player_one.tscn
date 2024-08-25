@@ -1,6 +1,7 @@
-[gd_scene load_steps=15 format=3 uid="uid://buj848fcldj5a"]
+[gd_scene load_steps=16 format=3 uid="uid://buj848fcldj5a"]
 
-[ext_resource type="Script" path="res://02_Scripts/player_one.gd" id="1_82ecm"]
+[ext_resource type="Script" path="res://03_Scripts/player_one.gd" id="1_82ecm"]
+[ext_resource type="PackedScene" uid="uid://dmm07csh88rc2" path="res://02_Scenes/projectile.tscn" id="2_bo62o"]
 [ext_resource type="Texture2D" uid="uid://y32yad3favrl" path="res://01_Assets/01_Sprites/Fighter_Tileset.png" id="2_m7lwj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lusck"]
@@ -91,18 +92,26 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_5vfy3"]
-radius = 7.07107
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqd5a"]
+size = Vector2(14, 17)
 
 [node name="Player One" type="CharacterBody2D"]
 script = ExtResource("1_82ecm")
+projectile = ExtResource("2_bo62o")
+player_index = 1
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_eafc4")
-animation = &"run"
+animation = &"jump"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -8)
-shape = SubResource("CircleShape2D_5vfy3")
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_oqd5a")
+
+[node name="ProjectileTime" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[connection signal="timeout" from="ProjectileTime" to="." method="_on_projectile_time_timeout"]

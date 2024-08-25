@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dmm07csh88rc2"]
+
+[ext_resource type="Script" path="res://03_Scripts/bullet.gd" id="1_usy8r"]
+[ext_resource type="Texture2D" uid="uid://v3vte8sn2dpg" path="res://01_Assets/01_Sprites/gf_bullet.png" id="2_tmie5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pvbd7"]
+radius = 2.0
+
+[sub_resource type="Curve" id="Curve_8m3dm"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_hfmur"]
+offsets = PackedFloat32Array(0.93, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[node name="Bullet" type="Area2D"]
+script = ExtResource("1_usy8r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_pvbd7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_tmie5")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 40
+emission_shape = 1
+emission_sphere_radius = 1.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 0.3
+initial_velocity_max = 0.3
+scale_amount_min = 2.0
+scale_amount_max = 2.0
+scale_amount_curve = SubResource("Curve_8m3dm")
+color = Color(0.977937, 0.977937, 0.977937, 1)
+color_ramp = SubResource("Gradient_hfmur")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
