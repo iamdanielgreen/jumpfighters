@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgcn654g7vlox"]
+[gd_scene load_steps=12 format=3 uid="uid://dgcn654g7vlox"]
 
 [ext_resource type="PackedScene" uid="uid://dmm07csh88rc2" path="res://02_Scenes/projectile.tscn" id="2_3mtgd"]
 [ext_resource type="Texture2D" uid="uid://y32yad3favrl" path="res://01_Assets/01_Sprites/Fighter_Tileset.png" id="2_diwty"]
 [ext_resource type="Script" path="res://03_Scripts/player_two.gd" id="3_44mai"]
+[ext_resource type="PackedScene" uid="uid://bhhg8ulx181jp" path="res://02_Scenes/death_sparkles.tscn" id="3_78tor"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bqhcn"]
 atlas = ExtResource("2_diwty")
@@ -63,6 +64,7 @@ size = Vector2(14, 16)
 [node name="Player Two" type="CharacterBody2D"]
 script = ExtResource("3_44mai")
 projectile = ExtResource("2_3mtgd")
+death_sparkles = ExtResource("3_78tor")
 player_index = 2
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -78,4 +80,8 @@ shape = SubResource("RectangleShape2D_nywgw")
 wait_time = 0.3
 autostart = true
 
+[node name="RespawnTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="timeout" from="ProjectileTime" to="." method="_on_projectile_time_timeout"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]

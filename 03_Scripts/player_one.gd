@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 @onready var p1_sprite = $AnimatedSprite2D 
 
-@export var projectile: PackedScene 
+@export var projectile: PackedScene
+@export var death_sparkles: PackedScene 
 @export var player_index: int
 
 const SPEED = 130.0 #Default was 300.0
@@ -61,9 +62,13 @@ func decrease_health() -> void:
 	health -= 100.0 / 5.0
 	
 	if health <= 0: 
-		#Play death sparkles
-		#Wait a small amount of time, then reset.
-		#reset_player() #TODO: Insert spawn points, add player reset
+		var death_sparkles_instance: CPUParticles2D = death_sparkles.instantiate()
+		get_parent().add_child(death_sparkles_instance)
+		death_sparkles_instance.emitting = true
+		death_sparkles_instance.position = position
+		get_parent().get_node("Camera2D").apply_shake()
+		#TODO: Wait a small amount of time, then reset.
+		reset_player() 
 		health = 100
 		get_parent().scored(int(player_index)) #By default, player_index should return an integer...
 		#... Putting the int in before the player_index just makes sure it is. 
@@ -87,7 +92,11 @@ func shoot_projectile() -> void:
 			projectile_instance.direction = 1
 			
 	can_shoot = false
-	
+
+func reset_player() -> void:
+	var spawn_points: Node = get_parent().get_node("SpawnPoints")
+	position = spawn_points.get_child(0).position
+
 #In theory, this thing only works in this circumstance if the player is the Gunfighter. You'd need to change this...
 #... if they were a different character.
 func _on_projectile_time_timeout() -> void:

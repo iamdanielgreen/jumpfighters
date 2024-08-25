@@ -1,9 +1,11 @@
-[gd_scene load_steps=9 format=4 uid="uid://cwv5gc0xtkwnj"]
+[gd_scene load_steps=11 format=4 uid="uid://cwv5gc0xtkwnj"]
 
 [ext_resource type="Script" path="res://03_Scripts/gameManager.gd" id="1_2itfj"]
 [ext_resource type="Texture2D" uid="uid://82kkr7w008o4" path="res://01_Assets/01_Sprites/tileset.png" id="1_5scgh"]
 [ext_resource type="PackedScene" uid="uid://buj848fcldj5a" path="res://02_Scenes/player_one.tscn" id="2_ttv1b"]
 [ext_resource type="PackedScene" uid="uid://dgcn654g7vlox" path="res://02_Scenes/player_two.tscn" id="3_aahkk"]
+[ext_resource type="Script" path="res://03_Scripts/camera_shake.gd" id="3_h6r4a"]
+[ext_resource type="FontFile" uid="uid://cd76dcu3wt1ft" path="res://01_Assets/03_Fonts/WorkSans-SemiBold.otf" id="5_cogtb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_43gq2"]
 texture = ExtResource("1_5scgh")
@@ -135,12 +137,13 @@ tile_set = SubResource("TileSet_l2ehq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
+script = ExtResource("3_h6r4a")
 
 [node name="Player1" parent="." groups=["Player"] instance=ExtResource("2_ttv1b")]
 position = Vector2(-213, 110)
 
 [node name="Player2" parent="." groups=["Player"] instance=ExtResource("3_aahkk")]
-position = Vector2(213, 110)
+position = Vector2(213, 111)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
@@ -158,7 +161,7 @@ grow_vertical = 2
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 28.0
+offset_bottom = 40.0
 grow_horizontal = 2
 theme_override_constants/separation = 10
 
@@ -168,7 +171,9 @@ layout_mode = 2
 size_flags_horizontal = 2
 
 [node name="P1Score" type="Label" parent="UI/PlayerContainers/Player1"]
+custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_cogtb")
 theme_override_font_sizes/font_size = 20
 text = "0"
 horizontal_alignment = 1
@@ -189,7 +194,9 @@ layout_mode = 2
 size_flags_horizontal = 10
 
 [node name="P2Score" type="Label" parent="UI/PlayerContainers/Player2"]
+custom_minimum_size = Vector2(0, 28)
 layout_mode = 2
+theme_override_fonts/font = ExtResource("5_cogtb")
 theme_override_font_sizes/font_size = 20
 text = "0"
 horizontal_alignment = 1
@@ -204,3 +211,11 @@ theme_override_styles/background = SubResource("StyleBoxFlat_ug30u")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qbhxs")
 value = 100.0
 show_percentage = false
+
+[node name="SpawnPoints" type="Node" parent="."]
+
+[node name="P1Spawn" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(-213, 110)
+
+[node name="P2Spawn" type="Marker2D" parent="SpawnPoints"]
+position = Vector2(213, 111)

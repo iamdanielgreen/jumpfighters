@@ -7,10 +7,11 @@ point_count = 2
 [node name="CPUParticles2D" type="CPUParticles2D"]
 process_mode = 3
 emitting = false
-amount = 25
+amount = 30
 lifetime = 0.5
 one_shot = true
 explosiveness = 0.85
+randomness = 0.1
 lifetime_randomness = 1.0
 emission_shape = 1
 emission_sphere_radius = 40.0
