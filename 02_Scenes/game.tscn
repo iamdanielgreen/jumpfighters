@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cwv5gc0xtkwnj"]
+[gd_scene load_steps=14 format=4 uid="uid://cwv5gc0xtkwnj"]
 
 [ext_resource type="Script" path="res://03_Scripts/gameManager.gd" id="1_2itfj"]
 [ext_resource type="Texture2D" uid="uid://82kkr7w008o4" path="res://01_Assets/01_Sprites/tileset.png" id="1_5scgh"]
@@ -6,8 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://dgcn654g7vlox" path="res://02_Scenes/player_two.tscn" id="3_aahkk"]
 [ext_resource type="Script" path="res://03_Scripts/camera_shake.gd" id="3_h6r4a"]
 [ext_resource type="FontFile" uid="uid://btssqpnsdy1lc" path="res://01_Assets/03_Fonts/Helvetica LT Ultra Compressed.ttf" id="6_2kgol"]
-[ext_resource type="Script" path="res://03_Scripts/win_ui.gd" id="6_wdk65"]
+[ext_resource type="Script" path="res://03_Scripts/win_screen.gd" id="6_wdk65"]
 [ext_resource type="FontFile" uid="uid://ebe1ov8pjolh" path="res://01_Assets/03_Fonts/LeagueGothic-Regular.otf" id="8_yd1ge"]
+[ext_resource type="FontFile" uid="uid://bsry8lcv357nh" path="res://01_Assets/03_Fonts/Reglo-Bold.otf" id="9_huwte"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_43gq2"]
 texture = ExtResource("1_5scgh")
@@ -213,6 +214,7 @@ value = 100.0
 show_percentage = false
 
 [node name="WinScreen" type="ColorRect" parent="UI"]
+visible = false
 z_index = 5
 layout_mode = 1
 anchors_preset = 15
@@ -229,15 +231,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -120.0
-offset_top = -62.0
-offset_right = 121.0
-offset_bottom = -1.0
+offset_left = -240.0
+offset_top = -92.0
+offset_right = 9386.0
+offset_bottom = 2308.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.05, 0.05)
 theme_override_fonts/font = ExtResource("8_yd1ge")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 1800
 text = "PLAYER 1 VICTORY"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="WinScreenButtons" type="VBoxContainer" parent="UI/WinScreen"]
 layout_mode = 1
@@ -246,20 +251,29 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -98.0
-offset_top = 1.0
-offset_right = 98.0
-offset_bottom = 67.0
+offset_left = -49.0
+offset_top = 25.0
+offset_right = 1994.0
+offset_bottom = 693.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+theme_override_constants/separation = 50
 
 [node name="RematchButton" type="Button" parent="UI/WinScreen/WinScreenButtons"]
+process_mode = 3
 layout_mode = 2
-text = "REMATCH"
+theme_override_fonts/font = ExtResource("9_huwte")
+theme_override_font_sizes/font_size = 300
+text = "Jumpfight Again"
+icon_alignment = 1
 
 [node name="ReturnMenuButton" type="Button" parent="UI/WinScreen/WinScreenButtons"]
+process_mode = 3
 layout_mode = 2
-text = "RETURN TO MAIN MENU"
+theme_override_fonts/font = ExtResource("9_huwte")
+theme_override_font_sizes/font_size = 300
+text = "Main Menu"
 
 [node name="SpawnPoints" type="Node" parent="."]
 
@@ -268,3 +282,6 @@ position = Vector2(-213, 110)
 
 [node name="P2Spawn" type="Marker2D" parent="SpawnPoints"]
 position = Vector2(213, 111)
+
+[connection signal="pressed" from="UI/WinScreen/WinScreenButtons/RematchButton" to="UI" method="_on_rematch_button_pressed"]
+[connection signal="pressed" from="UI/WinScreen/WinScreenButtons/ReturnMenuButton" to="UI" method="_on_return_menu_button_pressed"]

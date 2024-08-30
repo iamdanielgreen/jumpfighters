@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bnxk3pk1heokt"]
+[gd_scene load_steps=5 format=3 uid="uid://bnxk3pk1heokt"]
 
 [ext_resource type="Script" path="res://03_Scripts/menu.gd" id="1_l735l"]
 [ext_resource type="FontFile" uid="uid://ebe1ov8pjolh" path="res://01_Assets/03_Fonts/LeagueGothic-Regular.otf" id="1_mna6l"]
 [ext_resource type="Texture2D" uid="uid://8i80a0k56c46" path="res://01_Assets/01_Sprites/04_Backgrounds/JF_TitleScreen.jpg" id="1_qgn2p"]
+[ext_resource type="FontFile" uid="uid://bsry8lcv357nh" path="res://01_Assets/03_Fonts/Reglo-Bold.otf" id="2_u7p7r"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -38,23 +39,23 @@ theme_override_constants/separation = 15
 
 [node name="SingleMatchButton" type="Button" parent="1/MainMenuButtons"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_mna6l")
+theme_override_fonts/font = ExtResource("2_u7p7r")
 theme_override_font_sizes/font_size = 60
-text = "SINGLE MATCH"
+text = "Single Match"
 
 [node name="CatastropheButton" type="Button" parent="1/MainMenuButtons"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_mna6l")
+theme_override_fonts/font = ExtResource("2_u7p7r")
 theme_override_font_sizes/font_size = 60
-text = "CATASTROPHE MODE
+text = "Catastrophe Mode
 "
 icon_alignment = 1
 
 [node name="OptionsButton" type="Button" parent="1/MainMenuButtons"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_mna6l")
+theme_override_fonts/font = ExtResource("2_u7p7r")
 theme_override_font_sizes/font_size = 60
-text = "OPTIONS"
+text = "Options"
 
 [node name="TitleScreen" type="Sprite2D" parent="1"]
 z_index = -5
@@ -121,6 +122,6 @@ theme_override_font_sizes/font_size = 50
 text = "Back"
 
 [connection signal="pressed" from="1/MainMenuButtons/SingleMatchButton" to="." method="_on_single_match_button_pressed"]
-[connection signal="pressed" from="1/MainMenuButtons/CatastropheButton" to="." method="_on_initial_button_pressed"]
+[connection signal="pressed" from="1/MainMenuButtons/CatastropheButton" to="." method="_on_catastrophe_button_pressed"]
 [connection signal="pressed" from="1/MainMenuButtons/OptionsButton" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="2/VBoxContainer/ComeBackButton" to="." method="_on_come_back_button_pressed"]

@@ -23,6 +23,8 @@ func scored(death_player_index : int) -> void:
 		
 	if game_manager.current_game_mode == game_manager.game_mode.SingleMatch:
 		$UI.game_finished(str(winner_index))
+	if game_manager.current_game_mode == game_manager.game_mode.Championship and (current_round == 2 and scores.has(2)) or current_round == 3:
+		$UI.game_finished(str(winner_index))
 		
 	current_round += 1
 		
