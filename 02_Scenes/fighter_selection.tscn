@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://bmuf60gqphpn7"]
+
+[ext_resource type="Texture2D" uid="uid://c2jfll6bdfivp" path="res://01_Assets/01_Sprites/02_Test Sprites/knifefighter_portrait.png" id="1_322fp"]
+[ext_resource type="Texture2D" uid="uid://cjqs5i2j4o2rn" path="res://01_Assets/01_Sprites/02_Test Sprites/p1_select.png" id="1_grfel"]
+[ext_resource type="Texture2D" uid="uid://b3xg48liqf5kt" path="res://01_Assets/01_Sprites/02_Test Sprites/gunfighter_portrait.png" id="2_ifx5t"]
+[ext_resource type="Script" path="res://03_Scripts/character_select_script.gd" id="2_n5gy5"]
+[ext_resource type="Texture2D" uid="uid://cnilhc4d4x851" path="res://01_Assets/01_Sprites/02_Test Sprites/p2_select.png" id="3_avc7n"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(4, 4)
+
+[node name="Cursor" type="Sprite2D" parent="."]
+z_index = 2
+texture = ExtResource("1_grfel")
+centered = false
+script = ExtResource("2_n5gy5")
+player1Text = ExtResource("1_grfel")
+player2Text = ExtResource("3_avc7n")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 32.0
+columns = 2
+
+[node name="Knifefighter" type="TextureRect" parent="GridContainer" groups=["Fighters"]]
+layout_mode = 2
+texture = ExtResource("1_322fp")
+
+[node name="Gunfighter" type="TextureRect" parent="GridContainer" groups=["Fighters"]]
+layout_mode = 2
+texture = ExtResource("2_ifx5t")

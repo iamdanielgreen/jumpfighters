@@ -76,7 +76,8 @@ func decrease_health() -> void:
 	get_health_bar().value = health
 		
 func get_health_bar() -> ProgressBar: #Decrease of Health Bar is reflected in player's Progress Bar
-	return get_parent().get_node("UI/PlayerContainers/Player1/HealthProgressBar")
+	#return get_parent().get_node("UI/PlayerContainers/Player1/HealthProgressBar")
+	return get_parent().get_node("UI/Player1/HealthProgressBar")
 	
 #Creates projectile, forces player to wait before firing again
 func shoot_projectile() -> void:
@@ -95,7 +96,10 @@ func shoot_projectile() -> void:
 
 func reset_player() -> void:
 	var spawn_points: Node = get_parent().get_node("SpawnPoints")
-	position = spawn_points.get_child(0).position
+	if game_manager.game_mode.QuickFight:
+		position = spawn_points.get_child(3).position
+	else:
+		position = spawn_points.get_child(0).position
 
 #In theory, this thing only works in this circumstance if the player is the Gunfighter. You'd need to change this...
 #... if they were a different character.

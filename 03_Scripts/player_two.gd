@@ -76,7 +76,7 @@ func decrease_health() -> void:
 	get_health_bar().value = health
 		
 func get_health_bar() -> ProgressBar: #Decrease of Health Bar is reflected in player's Progress Bar
-	return get_parent().get_node("UI/PlayerContainers/Player2/HealthProgressBar")
+	return get_parent().get_node("UI/Player2/HealthProgressBar")
 	
 #Creates projectile, forces player to wait before firing again
 func shoot_projectile() -> void:
