@@ -6,7 +6,7 @@ extends HBoxContainer
 @onready var outta_time: ColorRect = $"../../OutOfTimeScreen"
 @onready var camera: Camera2D = $"../../../Camera2D"
 
-var time: float = 30.0 #time does not like being set above 59.999
+var time: float = 59.999 #time does not like being set above 59.999
 var minutes: int = 0
 var seconds: int = 0
 var milliseconds: int = 0
