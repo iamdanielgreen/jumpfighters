@@ -19,7 +19,6 @@ func game_finished(winner_index: String) -> void:
 func _on_refight_button_pressed() -> void:
 	get_tree().paused = false
 	get_tree().reload_current_scene()
-	
 
 func _on_return_menu_button_pressed() -> void:
 	get_tree().paused = false

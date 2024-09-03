@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://buj848fcldj5a"]
+[gd_scene load_steps=18 format=3 uid="uid://buj848fcldj5a"]
 
 [ext_resource type="Script" path="res://03_Scripts/player_one.gd" id="1_82ecm"]
 [ext_resource type="PackedScene" uid="uid://dmm07csh88rc2" path="res://02_Scenes/projectile.tscn" id="2_bo62o"]
 [ext_resource type="Texture2D" uid="uid://y32yad3favrl" path="res://01_Assets/01_Sprites/Fighter_Tileset.png" id="2_m7lwj"]
 [ext_resource type="PackedScene" uid="uid://bhhg8ulx181jp" path="res://02_Scenes/death_sparkles.tscn" id="3_a1wm4"]
+[ext_resource type="AudioStream" uid="uid://c8ksdrcebtveo" path="res://01_Assets/02_Audio/SFX/Bullet_PewPew.wav" id="5_cporv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lusck"]
 atlas = ExtResource("2_m7lwj")
@@ -107,7 +108,7 @@ position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_eafc4")
 animation = &"jump"
 autoplay = "idle"
-frame_progress = 0.983472
+frame_progress = 0.646158
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
@@ -116,5 +117,9 @@ shape = SubResource("RectangleShape2D_oqd5a")
 [node name="ProjectileTime" type="Timer" parent="."]
 wait_time = 0.3
 autostart = true
+
+[node name="PewPewSound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -6)
+stream = ExtResource("5_cporv")
 
 [connection signal="timeout" from="ProjectileTime" to="." method="_on_projectile_time_timeout"]

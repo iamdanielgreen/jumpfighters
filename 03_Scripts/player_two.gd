@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @onready var p2_sprite = $AnimatedSprite2D
+@onready var pew_pew: AudioStreamPlayer2D = $PewPewSound
 
 @export var projectile: PackedScene 
 @export var death_sparkles: PackedScene
@@ -81,6 +82,7 @@ func get_health_bar() -> ProgressBar: #Decrease of Health Bar is reflected in pl
 #Creates projectile, forces player to wait before firing again
 func shoot_projectile() -> void:
 	if can_shoot:
+		pew_pew.play()
 		var projectile_instance: Area2D = projectile.instantiate()
 		projectile_instance.player_index = player_index #Which player owns which projectile? -
 		get_parent().add_child(projectile_instance)
