@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bnxk3pk1heokt"]
+[gd_scene load_steps=7 format=3 uid="uid://bnxk3pk1heokt"]
 
 [ext_resource type="Script" path="res://03_Scripts/menu.gd" id="1_l735l"]
 [ext_resource type="FontFile" uid="uid://ebe1ov8pjolh" path="res://01_Assets/03_Fonts/LeagueGothic-Regular.otf" id="1_mna6l"]
 [ext_resource type="Texture2D" uid="uid://8i80a0k56c46" path="res://01_Assets/01_Sprites/04_Backgrounds/JF_TitleScreen.jpg" id="1_qgn2p"]
 [ext_resource type="FontFile" uid="uid://bsry8lcv357nh" path="res://01_Assets/03_Fonts/Reglo-Bold.otf" id="2_u7p7r"]
+[ext_resource type="Script" path="res://03_Scripts/MainMenuButtons.gd" id="3_7vbe8"]
 [ext_resource type="AudioStream" uid="uid://ctkjia87287ws" path="res://01_Assets/02_Audio/Music/JumpfightersTheme.wav" id="5_gjw8u"]
 
 [node name="Menu" type="Control"]
@@ -43,6 +44,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_u7p7r")
 theme_override_font_sizes/font_size = 60
 text = "Quick Fight"
+script = ExtResource("3_7vbe8")
 
 [node name="FightFightButton" type="Button" parent="1/MainMenuButtons"]
 layout_mode = 2

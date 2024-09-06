@@ -1,15 +1,19 @@
-[gd_scene load_steps=18 format=4 uid="uid://cwv5gc0xtkwnj"]
+[gd_scene load_steps=22 format=4 uid="uid://cwv5gc0xtkwnj"]
 
 [ext_resource type="Script" path="res://03_Scripts/gameManager.gd" id="1_2itfj"]
 [ext_resource type="Texture2D" uid="uid://82kkr7w008o4" path="res://01_Assets/01_Sprites/tileset.png" id="1_5scgh"]
 [ext_resource type="PackedScene" uid="uid://buj848fcldj5a" path="res://02_Scenes/player_one.tscn" id="2_ttv1b"]
 [ext_resource type="PackedScene" uid="uid://dgcn654g7vlox" path="res://02_Scenes/player_two.tscn" id="3_aahkk"]
 [ext_resource type="Script" path="res://03_Scripts/camera_shake.gd" id="3_h6r4a"]
-[ext_resource type="AudioStream" uid="uid://bi7kn7mpns3py" path="res://01_Assets/02_Audio/Music/JF_Level_TwoWalkIn.wav" id="3_s6q5h"]
 [ext_resource type="Script" path="res://03_Scripts/win_screen.gd" id="6_wdk65"]
 [ext_resource type="FontFile" uid="uid://ebe1ov8pjolh" path="res://01_Assets/03_Fonts/LeagueGothic-Regular.otf" id="8_yd1ge"]
+[ext_resource type="Script" path="res://03_Scripts/WinScreenMenu.gd" id="9_fn0ju"]
 [ext_resource type="FontFile" uid="uid://bsry8lcv357nh" path="res://01_Assets/03_Fonts/Reglo-Bold.otf" id="9_huwte"]
+[ext_resource type="AudioStream" uid="uid://dtms074cn7gls" path="res://01_Assets/02_Audio/Music/JF_Level_TwoJumpIn_SlightlyLonger.wav" id="10_jacjx"]
+[ext_resource type="Script" path="res://02_Scenes/OuttatimeMenu.gd" id="10_m1lke"]
 [ext_resource type="Script" path="res://03_Scripts/countdown_timer.gd" id="10_nbcfp"]
+[ext_resource type="Script" path="res://03_Scripts/pause_screen.gd" id="11_4plxh"]
+[ext_resource type="Script" path="res://03_Scripts/pause_screen_buttons.gd" id="12_e3nxw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_43gq2"]
 texture = ExtResource("1_5scgh")
@@ -198,6 +202,12 @@ position = Vector2(0, 135)
 tile_map_data = PackedByteArray("AADx////AAAAAAEAAAAOAP//AAABAAAAAAAOAO//AAACAAAAAADx/+//AAAAAAAAAADy/+//AAABAAAAAADz/+//AAABAAEAAAD0/+//AAABAAIAAAD1/+//AAABAAAAAAD2/+//AAABAAAAAAD3/+//AAABAAEAAAD4/+//AAADAAEAAAAKAO//AAABAAIAAAALAO//AAABAAAAAAAMAO//AAABAAEAAAANAO//AAABAAAAAADx//D/AAACAAAAAADx//H/AAACAAEAAADx//L/AAACAAIAAADx//P/AAACAAEAAADx//T/AAACAAAAAADx//X/AAACAAAAAADx//b/AAACAAAAAADx//f/AAACAAAAAADx//j/AAACAAIAAADx//n/AAACAAEAAADx//r/AAACAAAAAADx//v/AAACAAIAAADx//z/AAACAAEAAADx//3/AAACAAEAAADx//7/AAACAAAAAAAOAPD/AAAAAAEAAAAOAPH/AAAAAAIAAAAOAPL/AAAAAAEAAAAOAPP/AAAAAAAAAAAOAPT/AAAAAAAAAAAOAPX/AAAAAAAAAAAOAPb/AAAAAAEAAAAOAPf/AAAAAAEAAAAOAPj/AAAAAAIAAAAOAPn/AAAAAAAAAAAOAPr/AAAAAAEAAAAOAPv/AAAAAAEAAAAOAPz/AAAAAAAAAAAOAP3/AAAAAAAAAAAOAP7/AAAAAAAAAADy////AAABAAAAAADz////AAAAAAIAAAD0////AAAAAAIAAAD1////AAAAAAIAAAD2////AAABAAIAAAD3////AAABAAEAAAD4////AAAAAAEAAAD5////AAABAAEAAAD6////AAABAAIAAAD7////AAABAAIAAAD8////AAABAAAAAAD9////AAAAAAIAAAD+////AAACAAAAAAD/////AAACAAEAAAAAAP//AAABAAEAAAABAP//AAABAAIAAAACAP//AAACAAIAAAADAP//AAACAAEAAAAEAP//AAAAAAIAAAAFAP//AAACAAIAAAAGAP//AAABAAEAAAAHAP//AAABAAIAAAAIAP//AAABAAEAAAAJAP//AAABAAEAAAAKAP//AAABAAAAAAALAP//AAABAAEAAAAMAP//AAACAAEAAAANAP//AAAAAAIAAADy//3/AAAEAAYAAADz//3/AAAEAAYAAAD0//3/AAAEAAYAAAD1//3/AAAEAAYAAAD2//3/AAAEAAYAAAD3//3/AAAEAAYAAAD4//3/AAAEAAYAAAD5//3/AAAEAAYAAAD6//3/AAAEAAYAAAD7//3/AAAEAAYAAAD8//3/AAAEAAYAAAD9//3/AAAEAAYAAAACAP3/AAAEAAYAAAADAP3/AAAEAAYAAAAEAP3/AAAEAAYAAAAFAP3/AAAEAAYAAAAGAP3/AAAEAAYAAAAHAP3/AAAEAAYAAAAIAP3/AAAEAAYAAAAJAP3/AAAEAAYAAAAKAP3/AAAEAAYAAAALAP3/AAAEAAYAAAAMAP3/AAAEAAYAAAANAP3/AAAEAAYAAADz//j/AAADAAYAAAD0//T/AAAFAAYAAAD0//j/AAADAAYAAAD1//T/AAAFAAYAAAD1//j/AAADAAYAAAD2//T/AAAFAAYAAAD3//T/AAAFAAYAAAD4//f/AAADAAYAAAD5//f/AAADAAYAAAD6//f/AAADAAYAAAD7//f/AAADAAYAAAD8//T/AAAFAAYAAAD9//T/AAAFAAYAAAD+//T/AAAFAAYAAAD///T/AAAFAAYAAAAAAPT/AAAFAAYAAAABAPT/AAAFAAYAAAACAPT/AAAFAAYAAAADAPT/AAAFAAYAAAAEAPf/AAADAAYAAAAFAPf/AAADAAYAAAAGAPf/AAADAAYAAAAHAPf/AAADAAYAAAAIAPT/AAAFAAYAAAAJAPT/AAAFAAYAAAAKAPT/AAAFAAYAAAAKAPj/AAADAAYAAAALAPT/AAAFAAYAAAALAPj/AAADAAYAAAAMAPj/AAADAAYAAAD7//r/AAAEAAUAAAD8//r/AAAEAAUAAAD5//r/AAADAAMAAAD6//r/AAAEAAUAAAD9//r/AAADAAQAAAACAPr/AAADAAMAAAADAPr/AAAEAAUAAAAEAPr/AAAEAAUAAAAFAPr/AAAEAAUAAAAGAPr/AAADAAQAAAD///H/AAAAAAgAAAAAAPH/AAAAAAgAAAD+//H/AAAAAAgAAAABAPH/AAAAAAgAAAD9//H/AAAAAAgAAAACAPH/AAAAAAgAAAD8//H/AAAAAAgAAAD7//H/AAABAAkAAAADAPH/AAAAAAgAAAAEAPH/AAAAAAkAAAAJAO//AAABAAEAAAAIAO//AAABAAAAAAAHAO//AAAAAAIAAAD4/+7/AAABAAAAAAAHAO7/AAABAAEAAAD4/+3/AAABAAAAAAD4/+z/AAABAAAAAAD4/+v/AAABAAAAAAD5/+v/AAABAAAAAAD6/+v/AAABAAAAAAD7/+v/AAABAAAAAAD8/+v/AAABAAAAAAD9/+v/AAABAAAAAAD+/+v/AAABAAAAAAD//+v/AAABAAAAAAAAAOv/AAABAAAAAAABAOv/AAABAAAAAAACAOv/AAABAAAAAAADAOv/AAABAAAAAAAEAOv/AAABAAAAAAAFAOv/AAABAAAAAAAGAOv/AAABAAAAAAAHAOv/AAABAAAAAAAHAOz/AAABAAAAAAAHAO3/AAABAAAAAAA=")
 tile_set = SubResource("TileSet_l2ehq")
 
+[node name="LevelPrototype" type="TileMapLayer" parent="." groups=["TileMap"]]
+use_parent_material = true
+position = Vector2(0, 135)
+tile_map_data = PackedByteArray("AADx////AAAAAAEAAAAOAP//AAABAAAAAAAOAO//AAACAAAAAADx/+//AAAAAAAAAADy/+//AAABAAAAAADz/+//AAABAAEAAAD0/+//AAABAAIAAAD1/+//AAABAAAAAAD2/+//AAABAAAAAAD3/+//AAABAAEAAAD4/+//AAADAAEAAAAKAO//AAABAAIAAAALAO//AAABAAAAAAAMAO//AAABAAEAAAANAO//AAABAAAAAADx//D/AAACAAAAAADx//H/AAACAAEAAADx//L/AAACAAIAAADx//P/AAACAAEAAADx//T/AAACAAAAAADx//X/AAACAAAAAADx//b/AAACAAAAAADx//f/AAACAAAAAADx//j/AAACAAIAAADx//n/AAACAAEAAADx//r/AAACAAAAAADx//v/AAACAAIAAADx//z/AAACAAEAAADx//3/AAACAAEAAADx//7/AAACAAAAAAAOAPD/AAAAAAEAAAAOAPH/AAAAAAIAAAAOAPL/AAAAAAEAAAAOAPP/AAAAAAAAAAAOAPT/AAAAAAAAAAAOAPX/AAAAAAAAAAAOAPb/AAAAAAEAAAAOAPf/AAAAAAEAAAAOAPj/AAAAAAIAAAAOAPn/AAAAAAAAAAAOAPr/AAAAAAEAAAAOAPv/AAAAAAEAAAAOAPz/AAAAAAAAAAAOAP3/AAAAAAAAAAAOAP7/AAAAAAAAAADy////AAABAAAAAADz////AAAAAAIAAAD0////AAAAAAIAAAD1////AAAAAAIAAAD2////AAABAAIAAAD3////AAABAAEAAAD4////AAAAAAEAAAD5////AAABAAEAAAD6////AAABAAIAAAD7////AAABAAIAAAD8////AAABAAAAAAD9////AAAAAAIAAAD+////AAACAAAAAAD/////AAACAAEAAAAAAP//AAABAAEAAAABAP//AAABAAIAAAACAP//AAACAAIAAAADAP//AAACAAEAAAAEAP//AAAAAAIAAAAFAP//AAACAAIAAAAGAP//AAABAAEAAAAHAP//AAABAAIAAAAIAP//AAABAAEAAAAJAP//AAABAAEAAAAKAP//AAABAAAAAAALAP//AAABAAEAAAAMAP//AAACAAEAAAANAP//AAAAAAIAAADy//3/AAAEAAYAAADz//3/AAAEAAYAAAD0//3/AAAEAAYAAAD1//3/AAAEAAYAAAD2//3/AAAEAAYAAAD3//3/AAAEAAYAAAD4//3/AAAEAAYAAAD5//3/AAAEAAYAAAD6//3/AAAEAAYAAAD7//3/AAAEAAYAAAD8//3/AAAEAAYAAAD9//3/AAAEAAYAAAACAP3/AAAEAAYAAAADAP3/AAAEAAYAAAAEAP3/AAAEAAYAAAAFAP3/AAAEAAYAAAAGAP3/AAAEAAYAAAAHAP3/AAAEAAYAAAAIAP3/AAAEAAYAAAAJAP3/AAAEAAYAAAAKAP3/AAAEAAYAAAALAP3/AAAEAAYAAAAMAP3/AAAEAAYAAAANAP3/AAAEAAYAAADz//j/AAADAAYAAAD0//T/AAAFAAYAAAD0//j/AAADAAYAAAD1//T/AAAFAAYAAAD1//j/AAADAAYAAAD2//T/AAAFAAYAAAD3//T/AAAFAAYAAAD4//f/AAADAAYAAAD5//f/AAADAAYAAAD6//f/AAADAAYAAAD7//f/AAADAAYAAAD8//T/AAAFAAYAAAD9//T/AAAFAAYAAAD+//T/AAAFAAYAAAD///T/AAAFAAYAAAAAAPT/AAAFAAYAAAABAPT/AAAFAAYAAAACAPT/AAAFAAYAAAADAPT/AAAFAAYAAAAEAPf/AAADAAYAAAAFAPf/AAADAAYAAAAGAPf/AAADAAYAAAAHAPf/AAADAAYAAAAIAPT/AAAFAAYAAAAJAPT/AAAFAAYAAAAKAPT/AAAFAAYAAAAKAPj/AAADAAYAAAALAPT/AAAFAAYAAAALAPj/AAADAAYAAAAMAPj/AAADAAYAAAD7//r/AAAEAAUAAAD8//r/AAAEAAUAAAD5//r/AAADAAMAAAD6//r/AAAEAAUAAAD9//r/AAADAAQAAAACAPr/AAADAAMAAAADAPr/AAAEAAUAAAAEAPr/AAAEAAUAAAAFAPr/AAAEAAUAAAAGAPr/AAADAAQAAAD///H/AAAAAAgAAAAAAPH/AAAAAAgAAAD+//H/AAAAAAgAAAABAPH/AAAAAAgAAAD9//H/AAAAAAgAAAACAPH/AAAAAAgAAAD8//H/AAAAAAgAAAD7//H/AAABAAkAAAADAPH/AAAAAAgAAAAEAPH/AAAAAAkAAAAJAO//AAABAAEAAAAIAO//AAABAAAAAAAHAO//AAAAAAIAAAD4/+7/AAABAAAAAAAHAO7/AAABAAEAAAD4/+3/AAABAAAAAAD4/+z/AAABAAAAAAD4/+v/AAABAAAAAAD5/+v/AAABAAAAAAD6/+v/AAABAAAAAAD7/+v/AAABAAAAAAD8/+v/AAABAAAAAAD9/+v/AAABAAAAAAD+/+v/AAABAAAAAAD//+v/AAABAAAAAAAAAOv/AAABAAAAAAABAOv/AAABAAAAAAACAOv/AAABAAAAAAADAOv/AAABAAAAAAAEAOv/AAABAAAAAAAFAOv/AAABAAAAAAAGAOv/AAABAAAAAAAHAOv/AAABAAAAAAAHAOz/AAABAAAAAAAHAO3/AAABAAAAAAA=")
+tile_set = SubResource("TileSet_l2ehq")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 script = ExtResource("3_h6r4a")
@@ -333,6 +343,7 @@ theme_override_fonts/font = ExtResource("9_huwte")
 theme_override_font_sizes/font_size = 300
 text = "ReFight"
 icon_alignment = 1
+script = ExtResource("9_fn0ju")
 
 [node name="ReturnMenuButton" type="Button" parent="UI/WinScreen/WinScreenButtons"]
 process_mode = 3
@@ -395,8 +406,73 @@ theme_override_fonts/font = ExtResource("9_huwte")
 theme_override_font_sizes/font_size = 300
 text = "Jumpfight Again"
 icon_alignment = 1
+script = ExtResource("10_m1lke")
 
 [node name="ReturnMenuButton" type="Button" parent="UI/OutOfTimeScreen/OutOfTimeButtons"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_huwte")
+theme_override_font_sizes/font_size = 300
+text = "Main Menu"
+
+[node name="PauseScreen" type="ColorRect" parent="UI"]
+visible = false
+z_index = 5
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.392157)
+script = ExtResource("11_4plxh")
+
+[node name="PauseText" type="Label" parent="UI/PauseScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -92.0
+offset_right = 9386.0
+offset_bottom = 2308.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+theme_override_fonts/font = ExtResource("8_yd1ge")
+theme_override_font_sizes/font_size = 1800
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseScreenButtons" type="VBoxContainer" parent="UI/PauseScreen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -49.0
+offset_top = 25.0
+offset_right = 1994.0
+offset_bottom = 693.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.05, 0.05)
+theme_override_constants/separation = 50
+
+[node name="ResumeFightButton" type="Button" parent="UI/PauseScreen/PauseScreenButtons"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_huwte")
+theme_override_font_sizes/font_size = 300
+text = "Resume Fight"
+icon_alignment = 1
+script = ExtResource("12_e3nxw")
+
+[node name="ReturnMenuButton" type="Button" parent="UI/PauseScreen/PauseScreenButtons"]
 process_mode = 3
 layout_mode = 2
 theme_override_fonts/font = ExtResource("9_huwte")
@@ -507,7 +583,7 @@ libraries = {
 [node name="LevelMusic" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 position = Vector2(0, 135)
-stream = ExtResource("3_s6q5h")
+stream = ExtResource("10_jacjx")
 autoplay = true
 bus = &"LevelBGM"
 
@@ -515,3 +591,5 @@ bus = &"LevelBGM"
 [connection signal="pressed" from="UI/WinScreen/WinScreenButtons/ReturnMenuButton" to="UI" method="_on_return_menu_button_pressed"]
 [connection signal="pressed" from="UI/OutOfTimeScreen/OutOfTimeButtons/RefightButton" to="UI" method="_on_refight_button_pressed"]
 [connection signal="pressed" from="UI/OutOfTimeScreen/OutOfTimeButtons/ReturnMenuButton" to="UI" method="_on_return_menu_button_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/PauseScreenButtons/ResumeFightButton" to="UI/PauseScreen" method="_on_resume_fight_button_pressed"]
+[connection signal="pressed" from="UI/PauseScreen/PauseScreenButtons/ReturnMenuButton" to="UI" method="_on_return_menu_button_pressed"]

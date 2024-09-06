@@ -5,6 +5,7 @@ extends HBoxContainer
 
 @onready var outta_time: ColorRect = $"../../OutOfTimeScreen"
 @onready var camera: Camera2D = $"../../../Camera2D"
+@onready var refight_outtatime: Button = $"../../OutOfTimeScreen/OutOfTimeButtons/RefightButton"
 
 var time: float = 59.999 #time does not like being set above 59.999
 var minutes: int = 0
@@ -37,6 +38,7 @@ func _process(delta) -> void:
 		camera.apply_shake() #This isn't seen when get_tree().paused happens and I don't know why.
 		#await get_tree().create_timer(1).timeout #Using Timer here means Out of Time Screen doesn't show.
 		outta_time.show()
+		refight_outtatime.grab_focus()
 		get_tree().paused = true # Using this means camera shake doesn't happen. It also means people can keep playing.
 		#... You know what, for now I'm just leaving it in. TODO
 	

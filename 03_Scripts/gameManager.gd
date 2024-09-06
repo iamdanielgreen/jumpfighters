@@ -13,7 +13,6 @@ var current_game_mode: game_mode
 var scores: Array[int] = [0, 0]
 var current_round: int = 1
 
-
 # Function to make countdown play on game start. Currently does not work. TODO
 #func game_start() -> void:
 	#get_tree().paused = true

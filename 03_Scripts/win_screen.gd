@@ -3,6 +3,8 @@
 extends Control
 
 @onready var countdown_timer: HBoxContainer = $CanvasLayer/CountdownTimer
+@onready var refight_button: Button = $WinScreen/WinScreenButtons/RefightButton
+
 
 func game_finished(winner_index: String) -> void:
 	countdown_timer.stop_timer()  
@@ -13,6 +15,7 @@ func game_finished(winner_index: String) -> void:
 		$WinScreen/VictoryText.text = "WAS IT WORTH IT?"
 	else:
 		$WinScreen/VictoryText.text = "PLAYER " + winner_index + " VICTORY"
+	refight_button.grab_focus()
 	get_tree().paused = true #Makes everything stop.
 	
 
