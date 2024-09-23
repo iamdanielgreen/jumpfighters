@@ -7,7 +7,7 @@ extends Node2D
 #@onready var game_start_text: Label = $GameStartText
 #@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-enum game_mode {QuickFight, FightFight3, FightFight5, EndlessFight, Catastrophe}
+enum game_mode {QuickFight, FightFight3, FightFight5, FightFight13, EndlessFight}
 
 var current_game_mode: game_mode
 var scores: Array[int] = [0, 0]
@@ -38,10 +38,13 @@ func scored(death_player_index : int) -> void:
 		
 	if game_manager.current_game_mode == game_manager.game_mode.QuickFight:
 		$UI.game_finished(str(winner_index))
-	if game_manager.current_game_mode == game_manager.game_mode.FightFight3 and (scores.has(2)): #or current_round == 4:
+	if game_manager.current_game_mode == game_manager.game_mode.FightFight3 and (scores.has(3)): #or current_round == 4:
 	#if game_manager.current_game_mode == game_manager.game_mode.FightFight3 and (current_round == 2 and scores.has(2)) or current_round == 4:
 		$UI.game_finished(str(winner_index))
-	if game_manager.current_game_mode == game_manager.game_mode.FightFight5 and (scores.has(3)): #or current_round == 4:
+	if game_manager.current_game_mode == game_manager.game_mode.FightFight5 and (scores.has(5)): #or current_round == 4:
+	#if game_manager.current_game_mode == game_manager.game_mode.FightFight5 and (current_round == 3 and scores.has(3)) or current_round == 6:
+		$UI.game_finished(str(winner_index))
+	if game_manager.current_game_mode == game_manager.game_mode.FightFight13 and (scores.has(13)): #or current_round == 4:
 	#if game_manager.current_game_mode == game_manager.game_mode.FightFight5 and (current_round == 3 and scores.has(3)) or current_round == 6:
 		$UI.game_finished(str(winner_index))
 	if game_manager.current_game_mode == game_manager.game_mode.EndlessFight and (scores.has(1000)): #or current_round == 4:

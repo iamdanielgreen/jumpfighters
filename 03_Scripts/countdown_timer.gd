@@ -7,7 +7,8 @@ extends HBoxContainer
 @onready var camera: Camera2D = $"../../../Camera2D"
 @onready var refight_outtatime: Button = $"../../OutOfTimeScreen/OutOfTimeButtons/RefightButton"
 
-var time: float = 59.999 #time does not like being set above 59.999
+var time: float = 60.0 #time does not like being set above 59.999
+#That was until you tried setting it to 300.0 on 07/09 and apparently it's fine now?
 var minutes: int = 0
 var seconds: int = 0
 var milliseconds: int = 0
