@@ -4,9 +4,11 @@ extends Control
 
 @onready var countdown_timer: HBoxContainer = $CanvasLayer/CountdownTimer
 @onready var refight_button: Button = $WinScreen/WinScreenButtons/RefightButton
+@onready var snow: GPUParticles2D = $"../SnowParticles"
 
 
 func game_finished(winner_index: String) -> void:
+	snow.queue_free()
 	countdown_timer.stop_timer()  
 	countdown_timer.queue_free()
 	await get_tree().create_timer(0.25).timeout 	#Wait a small amount of time

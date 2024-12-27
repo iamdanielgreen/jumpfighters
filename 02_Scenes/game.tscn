@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://cwv5gc0xtkwnj"]
+[gd_scene load_steps=27 format=4 uid="uid://cwv5gc0xtkwnj"]
 
 [ext_resource type="Script" path="res://03_Scripts/gameManager.gd" id="1_2itfj"]
 [ext_resource type="Texture2D" uid="uid://82kkr7w008o4" path="res://01_Assets/01_Sprites/tileset.png" id="1_5scgh"]
@@ -191,6 +191,34 @@ _data = {
 "TEST": SubResource("Animation_yp51i"),
 "gamestart": SubResource("Animation_bf4yk")
 }
+
+[sub_resource type="Curve" id="Curve_rfsjr"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.010989), -1.92308, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_h2nt1"]
+curve = SubResource("Curve_rfsjr")
+
+[sub_resource type="Gradient" id="Gradient_cnmcq"]
+offsets = PackedFloat32Array(0.47205, 0.614907)
+colors = PackedColorArray(1, 1, 1, 0.352941, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_iqtov"]
+gradient = SubResource("Gradient_cnmcq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_5avew"]
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(400, 1, 1)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+gravity = Vector3(45, 98, 0)
+scale_max = 4.0
+color_initial_ramp = SubResource("GradientTexture1D_iqtov")
+alpha_curve = SubResource("CurveTexture_h2nt1")
+turbulence_enabled = true
+turbulence_noise_speed_random = 0.0
+turbulence_influence_min = 0.02
+turbulence_influence_max = 0.08
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_2itfj")
@@ -511,7 +539,6 @@ z_index = 2
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_yd1ge")
 theme_override_font_sizes/font_size = 1800
-text = "JUMPFIGHT!"
 
 [node name="CountdownTimer" type="HBoxContainer" parent="UI/CanvasLayer"]
 offset_left = 3298.0
@@ -585,6 +612,13 @@ position = Vector2(0, 135)
 stream = ExtResource("10_jacjx")
 autoplay = true
 bus = &"LevelBGM"
+
+[node name="SnowParticles" type="GPUParticles2D" parent="."]
+position = Vector2(0, -175)
+amount = 200
+process_material = SubResource("ParticleProcessMaterial_5avew")
+lifetime = 10.0
+preprocess = 30.0
 
 [connection signal="pressed" from="UI/WinScreen/WinScreenButtons/RefightButton" to="UI" method="_on_refight_button_pressed"]
 [connection signal="pressed" from="UI/WinScreen/WinScreenButtons/ReturnMenuButton" to="UI" method="_on_return_menu_button_pressed"]
