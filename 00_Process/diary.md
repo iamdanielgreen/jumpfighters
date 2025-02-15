@@ -26,7 +26,7 @@ So the black and grey cat stays in the picture. It probably won't get used in th
 
 ## Feedback on Feedback - Monday 19 August 2024, 4:19pm
 
-I presented the current state of *Jumpfighters* during a Work in Progress session last Friday. People seemed into the idea as whole - the arcade-style premise of the game, its pixel art asthetic, and its focus on local multiplayer - but I receive a note on the current level design; namely, that it's too large and has too much space. 
+I presented the current state of *Jumpfighters* during a Work in Progress session last Friday. People seemed into the idea as whole - the arcade-style premise of the game, its pixel art asthetic, and its focus on local multiplayer - but I received a note on the current level design; namely, that it's too large and has too much space. 
 
 Hearing someone else say this crystalised a few thoughts that I had been having as I work on the game, but had not really been able to manifest due to a lack of playtesting. Namely, if players are meant to directly compete with each other as they are racing towards the Goal Area, there are just too many places to either hide or avoid conflict entirely. Which then begs a key question of what is the game even meant to be? Is it about **jumping** or **fighting**?
 
