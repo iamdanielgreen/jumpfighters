@@ -1,19 +1,19 @@
 [gd_scene load_steps=27 format=4 uid="uid://cwv5gc0xtkwnj"]
 
-[ext_resource type="Script" path="res://03_Scripts/gameManager.gd" id="1_2itfj"]
+[ext_resource type="Script" uid="uid://c2pmxpyotouva" path="res://03_Scripts/gameManager.gd" id="1_2itfj"]
 [ext_resource type="Texture2D" uid="uid://82kkr7w008o4" path="res://01_Assets/01_Sprites/tileset.png" id="1_5scgh"]
 [ext_resource type="PackedScene" uid="uid://buj848fcldj5a" path="res://02_Scenes/player_one.tscn" id="2_ttv1b"]
 [ext_resource type="PackedScene" uid="uid://dgcn654g7vlox" path="res://02_Scenes/player_two.tscn" id="3_aahkk"]
-[ext_resource type="Script" path="res://03_Scripts/camera_shake.gd" id="3_h6r4a"]
-[ext_resource type="Script" path="res://03_Scripts/win_screen.gd" id="6_wdk65"]
+[ext_resource type="Script" uid="uid://btjplvjksbdh2" path="res://03_Scripts/camera_shake.gd" id="3_h6r4a"]
+[ext_resource type="Script" uid="uid://c67pgxgnsq682" path="res://03_Scripts/win_screen.gd" id="6_wdk65"]
 [ext_resource type="FontFile" uid="uid://ebe1ov8pjolh" path="res://01_Assets/03_Fonts/LeagueGothic-Regular.otf" id="8_yd1ge"]
-[ext_resource type="Script" path="res://03_Scripts/WinScreenMenu.gd" id="9_fn0ju"]
+[ext_resource type="Script" uid="uid://bfbcarry4es4f" path="res://03_Scripts/WinScreenMenu.gd" id="9_fn0ju"]
 [ext_resource type="FontFile" uid="uid://bsry8lcv357nh" path="res://01_Assets/03_Fonts/Reglo-Bold.otf" id="9_huwte"]
 [ext_resource type="AudioStream" uid="uid://dtms074cn7gls" path="res://01_Assets/02_Audio/Music/JF_Level_TwoJumpIn_SlightlyLonger.wav" id="10_jacjx"]
-[ext_resource type="Script" path="res://03_Scripts/OuttatimeMenu.gd" id="10_m1lke"]
-[ext_resource type="Script" path="res://03_Scripts/countdown_timer.gd" id="10_nbcfp"]
-[ext_resource type="Script" path="res://03_Scripts/pause_screen.gd" id="11_4plxh"]
-[ext_resource type="Script" path="res://03_Scripts/pause_screen_buttons.gd" id="12_e3nxw"]
+[ext_resource type="Script" uid="uid://cy0i7ugbw22ti" path="res://03_Scripts/OuttatimeMenu.gd" id="10_m1lke"]
+[ext_resource type="Script" uid="uid://d0hek4coxeg64" path="res://03_Scripts/countdown_timer.gd" id="10_nbcfp"]
+[ext_resource type="Script" uid="uid://bjlnorivmte1s" path="res://03_Scripts/pause_screen.gd" id="11_4plxh"]
+[ext_resource type="Script" uid="uid://bisnjxhvme03x" path="res://03_Scripts/pause_screen_buttons.gd" id="12_e3nxw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_43gq2"]
 texture = ExtResource("1_5scgh")
@@ -188,8 +188,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j6pda"]
 _data = {
-"TEST": SubResource("Animation_yp51i"),
-"gamestart": SubResource("Animation_bf4yk")
+&"TEST": SubResource("Animation_yp51i"),
+&"gamestart": SubResource("Animation_bf4yk")
 }
 
 [sub_resource type="Curve" id="Curve_rfsjr"]
@@ -603,7 +603,7 @@ position = Vector2(60, 17)
 process_mode = 3
 root_node = NodePath("../UI")
 libraries = {
-"": SubResource("AnimationLibrary_j6pda")
+&"": SubResource("AnimationLibrary_j6pda")
 }
 
 [node name="LevelMusic" type="AudioStreamPlayer2D" parent="."]
@@ -614,11 +614,12 @@ autoplay = true
 bus = &"LevelBGM"
 
 [node name="SnowParticles" type="GPUParticles2D" parent="."]
+visible = false
 position = Vector2(0, -175)
 amount = 200
-process_material = SubResource("ParticleProcessMaterial_5avew")
 lifetime = 10.0
 preprocess = 30.0
+process_material = SubResource("ParticleProcessMaterial_5avew")
 
 [connection signal="pressed" from="UI/WinScreen/WinScreenButtons/RefightButton" to="UI" method="_on_refight_button_pressed"]
 [connection signal="pressed" from="UI/WinScreen/WinScreenButtons/ReturnMenuButton" to="UI" method="_on_return_menu_button_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://buj848fcldj5a"]
 
-[ext_resource type="Script" path="res://03_Scripts/player_one.gd" id="1_82ecm"]
+[ext_resource type="Script" uid="uid://b32pjc7qfappc" path="res://03_Scripts/player_one.gd" id="1_82ecm"]
 [ext_resource type="PackedScene" uid="uid://dmm07csh88rc2" path="res://02_Scenes/projectile.tscn" id="2_bo62o"]
 [ext_resource type="PackedScene" uid="uid://bhhg8ulx181jp" path="res://02_Scenes/death_sparkles.tscn" id="3_a1wm4"]
 [ext_resource type="Texture2D" uid="uid://gx400c3evut3" path="res://01_Assets/01_Sprites/XmasFighter_Tileset.png" id="4_6q4pf"]
